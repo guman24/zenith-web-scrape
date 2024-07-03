@@ -3,9 +3,11 @@ import time
 
 import chromedriver_autoinstaller
 from bs4 import BeautifulSoup
-from flask import Flask
+from flask import Flask, request
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+
+from meal_automation import meal_automation
 
 chromedriver_autoinstaller.install()
 
@@ -73,5 +75,11 @@ def scrapeData():
     #     products.append((product_name,total_price,unit_price))
     # return driver.page_source
     
+@app.route("/meal_automate",methods=["POST"])
+def meal_automate():
+    meal_json = request.json
+    print("Meal Json is ",meal_json)
+    return meal_automation(meal_json)
+        
 if __name__ == "__main__":
     app.run(debug=True)
