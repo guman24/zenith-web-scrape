@@ -3,7 +3,8 @@ import json
 import numpy as np
 
 # Constants
-MAX_DEV_PERCENT = 5  # Maximum allowed deviation in percentage
+# MAX_DEV_PERCENT = 5  # Maximum allowed deviation in percentage
+MAX_DEV_PERCENT = 1  # Maximum allowed deviation in percentage
 FINE_TUNE_LIMIT = 0.20  # Maximum adjustment ratio for fine-tuning
 ITERATION_LIMIT = 100  # Max number of iterations to avoid infinite loops
 
